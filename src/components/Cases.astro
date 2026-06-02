@@ -1,0 +1,25 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+import { cases } from '../content/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+<section id="cases" class="border-t border-[var(--color-line)]">
+  <div class="mx-auto max-w-5xl px-5 py-20">
+    <p class="font-mono text-xs text-accent">{t('cases.kicker')}</p>
+    <h2 class="mt-1 text-2xl font-bold text-white md:text-3xl">{t('cases.title')}</h2>
+    <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      {cases.map((c) => (
+        <div class="overflow-hidden rounded-lg border border-[var(--color-line)]">
+          <div class="h-24" style={`background:${c.gradient}`}></div>
+          <div class="p-4">
+            <div class="font-bold text-white">{c[lang].title}</div>
+            <div class="mt-1 font-mono text-xs text-accent">{c.metric}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
