@@ -25,8 +25,11 @@ describe('useTranslations', () => {
     expect(t('nav.services')).toBe('Services');
   });
 
-  it('falls back to the default language for a missing key in another lang', () => {
-    const t = useTranslations('en');
-    expect(t('nav.services')).not.toBe('');
+  it('selects the right language for the same key', () => {
+    const es = useTranslations('es');
+    const en = useTranslations('en');
+    expect(es('hero.titleAccent')).toBe('núcleo de IA');
+    expect(en('hero.titleAccent')).toBe('AI core');
+    expect(es('hero.titleAccent')).not.toBe(en('hero.titleAccent'));
   });
 });
