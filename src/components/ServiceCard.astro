@@ -1,0 +1,12 @@
+---
+import type { Lang } from '../i18n/ui';
+import type { Service } from '../content/site';
+interface Props { service: Service; lang: Lang; featured?: boolean }
+const { service, lang, featured = false } = Astro.props;
+const border = featured ? 'border-[var(--color-line-accent)]' : 'border-[var(--color-line)]';
+---
+<div class={`rounded-lg border ${border} bg-white/[0.02] p-5 transition-colors hover:border-[var(--color-line-accent)]`}>
+  <div class="font-mono text-xs text-accent">[{service.tag}]</div>
+  <h3 class="mt-2 text-lg font-bold text-white">{service[lang].title}</h3>
+  <p class="mt-1 text-sm text-gray-400">{service[lang].desc}</p>
+</div>
