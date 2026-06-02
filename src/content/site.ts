@@ -10,10 +10,17 @@ export interface ProcessStep {
   en: { title: string; desc: string };
 }
 
-export interface CaseItem {
-  gradient: string;
-  es: { title: string; metric: string };
-  en: { title: string; metric: string };
+interface CaseContent {
+  title: string;
+  challenge: string;
+  solution: string;
+  results: string[];
+}
+
+export interface CaseStudy {
+  tag: string;
+  es: CaseContent;
+  en: CaseContent;
 }
 
 export const services: Service[] = [
@@ -81,17 +88,96 @@ export const processSteps: ProcessStep[] = [
   },
 ];
 
-// NOTE: placeholder cases — real project copy + metrics to be supplied by the user.
-export const cases: CaseItem[] = [
+export const caseStudies: CaseStudy[] = [
   {
-    gradient: 'linear-gradient(135deg,#06121a,#0a2433)',
-    es: { title: 'Pipeline de datos', metric: '-60% costo' },
-    en: { title: 'Data pipeline', metric: '-60% cost' },
+    tag: 'data',
+    es: {
+      title: 'Plataforma de Datos Empresarial',
+      challenge: 'Una arquitectura fragmentada, con múltiples fuentes de datos y procesos manuales.',
+      solution: 'Plataforma cloud-native sobre Azure y GCP con procesamiento distribuido, automatización y observabilidad centralizada.',
+      results: ['50+ TB procesados al mes', '90% menos tareas manuales', 'Multi-cloud Azure + GCP'],
+    },
+    en: {
+      title: 'Enterprise Data Platform',
+      challenge: 'A fragmented architecture with many data sources and manual processes.',
+      solution: 'A cloud-native platform on Azure and GCP with distributed processing, automation and centralized observability.',
+      results: ['50+ TB processed monthly', '90% fewer manual tasks', 'Multi-cloud Azure + GCP'],
+    },
   },
   {
-    gradient: 'linear-gradient(135deg,#1a1206,#332406)',
-    es: { title: 'Plataforma SaaS', metric: '0→prod 8 sem' },
-    en: { title: 'SaaS platform', metric: '0→prod 8 wks' },
+    tag: 'mlops',
+    es: {
+      title: 'Plataforma de Inteligencia Artificial',
+      challenge: 'Llevar modelos de Machine Learning desde la experimentación hasta producción de forma confiable.',
+      solution: 'Pipelines MLOps completos: entrenamiento, validación, despliegue y monitoreo automatizados.',
+      results: ['Despliegue de semanas a horas', 'Modelos monitoreados en tiempo real', 'ML en producción para múltiples clientes'],
+    },
+    en: {
+      title: 'AI / MLOps Platform',
+      challenge: 'Taking machine learning models from experimentation to reliable production.',
+      solution: 'End-to-end MLOps pipelines automating training, validation, deployment and monitoring.',
+      results: ['Deployment from weeks to hours', 'Models monitored in real time', 'Production ML for multiple clients'],
+    },
+  },
+  {
+    tag: 'finops',
+    es: {
+      title: 'Optimización de Costos Cloud',
+      challenge: 'Infraestructura sobredimensionada, con costos crecientes y baja visibilidad operativa.',
+      solution: 'Análisis FinOps, optimización de recursos y automatización de escalado — incluyendo la eliminación de revisiones zombie en Cloud Run.',
+      results: ['USD 19.500/año de ahorro', 'Mejor utilización de recursos', 'Mayor previsibilidad presupuestaria'],
+    },
+    en: {
+      title: 'Cloud Cost Optimization (FinOps)',
+      challenge: 'Oversized infrastructure with rising costs and poor operational visibility.',
+      solution: 'FinOps analysis, resource right-sizing and scaling automation — including removing zombie Cloud Run revisions.',
+      results: ['USD 19,500/year saved', 'Better resource utilization', 'More predictable budgeting'],
+    },
+  },
+  {
+    tag: 'cloud',
+    es: {
+      title: 'Arquitectura Cloud para Plataforma SaaS',
+      challenge: 'Construir una plataforma escalable capaz de soportar un crecimiento acelerado.',
+      solution: 'Arquitectura sobre Kubernetes, servicios administrados y despliegues automatizados.',
+      results: ['Alta disponibilidad', 'Despliegues continuos sin interrupciones', 'Autoescalado horizontal'],
+    },
+    en: {
+      title: 'Cloud Architecture for a SaaS Platform',
+      challenge: 'Building a scalable platform able to support accelerated growth.',
+      solution: 'A Kubernetes-based architecture with managed services and automated deployments.',
+      results: ['High availability', 'Continuous, zero-downtime deployments', 'Automatic horizontal scaling'],
+    },
+  },
+  {
+    tag: 'genai',
+    es: {
+      title: 'Plataforma de IA Generativa',
+      challenge: 'Integrar capacidades de IA generativa dentro de procesos de negocio existentes.',
+      solution: 'Agentes inteligentes, RAG y arquitecturas basadas en LLMs.',
+      results: ['100.000+ requests diarios', 'Automatización de procesos complejos', 'Menor tiempo de respuesta'],
+    },
+    en: {
+      title: 'Generative AI Platform',
+      challenge: 'Embedding generative AI capabilities into existing business processes.',
+      solution: 'Intelligent agents, RAG and LLM-based architectures.',
+      results: ['100,000+ daily requests', 'Automation of complex processes', 'Lower response times'],
+    },
+  },
+  {
+    tag: 'bigdata',
+    es: {
+      title: 'Procesamiento Distribuido de Grandes Volúmenes',
+      challenge: 'Procesar decenas de terabytes de información de forma eficiente y económica.',
+      solution: 'Arquitectura distribuida con Spark, BigQuery y servicios serverless.',
+      results: ['90 h → 5 h de procesamiento', 'Costos operativos mucho menores', 'Análisis casi en tiempo real'],
+    },
+    en: {
+      title: 'Large-Scale Distributed Data Processing',
+      challenge: 'Processing tens of terabytes of data efficiently and cost-effectively.',
+      solution: 'A distributed architecture using Spark, BigQuery and serverless services.',
+      results: ['90h → 5h processing time', 'Much lower operational cost', 'Near real-time analysis'],
+    },
   },
 ];
 

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { services, processSteps, cases, stack, areasOfExpertise } from '../content/site';
+import { services, processSteps, caseStudies, stack, areasOfExpertise } from '../content/site';
 
 const LANGS = ['es', 'en'] as const;
 
@@ -31,13 +31,15 @@ describe('content data', () => {
     }
   });
 
-  it('has cases, each bilingual with title + metric', () => {
-    expect(cases.length).toBeGreaterThan(0);
-    for (const c of cases) {
-      expect(c.gradient).toBeTruthy();
+  it('has case studies, each bilingual with challenge, solution and results', () => {
+    expect(caseStudies.length).toBeGreaterThan(0);
+    for (const c of caseStudies) {
+      expect(c.tag).toBeTruthy();
       for (const lang of LANGS) {
         expect(c[lang].title, `case ${lang}.title`).toBeTruthy();
-        expect(c[lang].metric, `case ${lang}.metric`).toBeTruthy();
+        expect(c[lang].challenge, `case ${lang}.challenge`).toBeTruthy();
+        expect(c[lang].solution, `case ${lang}.solution`).toBeTruthy();
+        expect(c[lang].results.length, `case ${lang}.results`).toBeGreaterThan(0);
       }
     }
   });
