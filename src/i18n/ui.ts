@@ -14,7 +14,7 @@ export const ui = {
     'hero.titleAccent': 'Cloud, Data & AI',
     'hero.titleB': ', lista para producción.',
     'hero.subtitle':
-      'NeuralCore es una empresa de ingeniería. Diseñamos, construimos y operamos las plataformas que impulsan datos e IA a escala — ingeniería, no consultoría.',
+      'NeuralCore es una empresa de ingeniería: diseñamos, construimos y operamos plataformas cloud, de datos e IA a escala de producción.',
     'hero.ctaPrimary': './iniciar_proyecto',
     'hero.ctaSecondary': 'ver_casos',
     'services.kicker': '// 01 — servicios',
@@ -51,7 +51,7 @@ export const ui = {
     'hero.titleAccent': 'Cloud, Data & AI',
     'hero.titleB': ' engineering, built for production.',
     'hero.subtitle':
-      'NeuralCore is an engineering company. We design, build and operate the platforms that run data and AI at scale — engineering, not advice.',
+      'NeuralCore is an engineering company: we design, build and operate cloud, data and AI platforms at production scale.',
     'hero.ctaPrimary': './start_project',
     'hero.ctaSecondary': 'view_cases',
     'services.kicker': '// 01 — services',
