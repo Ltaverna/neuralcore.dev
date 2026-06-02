@@ -19,20 +19,6 @@ export interface CaseItem {
 
 export const services: Service[] = [
   {
-    tag: 'ai',
-    capabilities: [
-      'Machine Learning',
-      'Deep Learning',
-      'Computer Vision',
-      'NLP & LLMs',
-      'AI Agents',
-      'RAG Systems',
-      'MLOps',
-    ],
-    es: { title: 'Inteligencia Artificial', desc: 'Modelos que entienden, ven y razonan — del prototipo a producción.' },
-    en: { title: 'Artificial Intelligence', desc: 'Models that understand, see and reason — from prototype to production.' },
-  },
-  {
     tag: 'cloud',
     capabilities: [
       'Cloud Native',
@@ -43,21 +29,22 @@ export const services: Service[] = [
       'Serverless',
       'Infrastructure as Code',
     ],
-    es: { title: 'Cloud Engineering', desc: 'Arquitecturas cloud-native escalables y reproducibles.' },
-    en: { title: 'Cloud Engineering', desc: 'Scalable, reproducible cloud-native architectures.' },
+    es: { title: 'Cloud Platforms', desc: 'Bases cloud-native seguras, escalables y reproducibles por defecto.' },
+    en: { title: 'Cloud Platforms', desc: 'Cloud-native foundations that are secure, scalable and reproducible by default.' },
   },
   {
     tag: 'data',
     capabilities: [
       'Data Lakes',
       'Data Warehouses',
+      'Lakehouse',
       'Data Engineering',
       'Real-Time Processing',
       'Analytics',
       'Data Governance',
     ],
-    es: { title: 'Data Platforms', desc: 'De datos crudos a decisiones, en tiempo real.' },
-    en: { title: 'Data Platforms', desc: 'From raw data to decisions, in real time.' },
+    es: { title: 'Data Platforms', desc: 'Lakehouses y pipelines que convierten datos crudos en productos gobernados y en tiempo real.' },
+    en: { title: 'Data Platforms', desc: 'Lakehouses and pipelines that turn raw data into governed, real-time products.' },
   },
   {
     tag: 'platform',
@@ -66,9 +53,36 @@ export const services: Service[] = [
       'CI/CD',
       'Observability',
       'Reliability Engineering',
+      'Golden Paths',
     ],
-    es: { title: 'Platform Engineering', desc: 'Plataformas internas que aceleran a tus equipos.' },
-    en: { title: 'Platform Engineering', desc: 'Internal platforms that accelerate your teams.' },
+    es: { title: 'Platform Engineering', desc: 'Plataformas internas con golden paths, CI/CD y observabilidad incorporada.' },
+    en: { title: 'Platform Engineering', desc: 'Internal developer platforms with golden paths, CI/CD and built-in observability.' },
+  },
+  {
+    tag: 'ai',
+    capabilities: [
+      'Machine Learning',
+      'Deep Learning',
+      'Computer Vision',
+      'NLP & LLMs',
+      'AI Agents',
+      'RAG Systems',
+    ],
+    es: { title: 'Inteligencia Artificial', desc: 'IA en producción: de ML clásico a sistemas LLM, agentes y retrieval.' },
+    en: { title: 'Artificial Intelligence', desc: 'Production AI — from classical ML to LLM systems, agents and retrieval.' },
+  },
+  {
+    tag: 'mlops',
+    capabilities: [
+      'Model Training',
+      'Feature Stores',
+      'Model Serving',
+      'Monitoring',
+      'Model Registry',
+      'CI/CD for ML',
+    ],
+    es: { title: 'MLOps', desc: 'El ciclo que mantiene tus modelos fiables en producción: entrenar, servir, monitorear, reentrenar.' },
+    en: { title: 'MLOps', desc: 'The lifecycle that keeps models reliable in production: train, serve, monitor, retrain.' },
   },
 ];
 
@@ -90,8 +104,8 @@ export const processSteps: ProcessStep[] = [
   },
   {
     n: '04',
-    es: { title: 'scale', desc: 'medir y escalar' },
-    en: { title: 'scale', desc: 'measure and scale' },
+    es: { title: 'operate', desc: 'medir, escalar y mantener' },
+    en: { title: 'operate', desc: 'measure, scale and run' },
   },
 ];
 
@@ -111,8 +125,11 @@ export const cases: CaseItem[] = [
 
 export const stack: string[] = [
   'Python',
-  'PyTorch',
   'TypeScript',
+  'PyTorch',
+  'Databricks',
+  'Spark',
+  'Airflow',
   'Azure',
   'Google Cloud',
   'Kubernetes',
