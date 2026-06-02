@@ -9,9 +9,4 @@ const border = featured ? 'border-[var(--color-line-accent)]' : 'border-[var(--c
   <div class="font-mono text-xs text-accent">[{service.tag}]</div>
   <h3 class="mt-2 text-lg font-bold text-white">{service[lang].title}</h3>
   <p class="mt-1 text-sm text-gray-400">{service[lang].desc}</p>
-  <ul class="mt-4 flex flex-wrap gap-1.5">
-    {service.capabilities.map((cap) => (
-      <li class="rounded border border-[var(--color-line)] px-2 py-0.5 font-mono text-[11px] text-gray-300">{cap}</li>
-    ))}
-  </ul>
 </div>

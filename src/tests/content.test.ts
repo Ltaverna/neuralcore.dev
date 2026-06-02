@@ -1,19 +1,23 @@
 import { describe, it, expect } from 'vitest';
-import { services, processSteps, cases, stack } from '../content/site';
+import { services, processSteps, cases, stack, areasOfExpertise } from '../content/site';
 
 const LANGS = ['es', 'en'] as const;
 
 describe('content data', () => {
-  it('has services, each bilingual with title + desc and capabilities', () => {
+  it('has services, each bilingual with title + desc', () => {
     expect(services.length).toBeGreaterThan(0);
     for (const s of services) {
       expect(s.tag).toBeTruthy();
-      expect(s.capabilities.length, `service ${s.tag} capabilities`).toBeGreaterThan(0);
       for (const lang of LANGS) {
         expect(s[lang].title, `service ${s.tag} ${lang}.title`).toBeTruthy();
         expect(s[lang].desc, `service ${s.tag} ${lang}.desc`).toBeTruthy();
       }
     }
+  });
+
+  it('has a non-empty areas-of-expertise list', () => {
+    expect(areasOfExpertise.length).toBeGreaterThan(3);
+    for (const area of areasOfExpertise) expect(area).toBeTruthy();
   });
 
   it('has 4 process steps, each bilingual with title + desc', () => {
