@@ -14,5 +14,8 @@ const t = useTranslations(lang);
     <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
       {services.map((s, i) => <ServiceCard service={s} lang={lang} featured={i === 0} />)}
     </div>
+    <p class="mt-6 font-mono text-xs text-gray-500">
+      <span class="text-accent">▸</span> {t('services.crosscutting')}
+    </p>
   </div>
 </section>

@@ -1,5 +1,6 @@
 export interface Service {
   tag: string;
+  capabilities: string[];
   es: { title: string; desc: string };
   en: { title: string; desc: string };
 }
@@ -18,24 +19,56 @@ export interface CaseItem {
 
 export const services: Service[] = [
   {
-    tag: 'ml',
-    es: { title: 'Machine Learning', desc: 'LLMs, visión, agentes y modelos a medida.' },
-    en: { title: 'Machine Learning', desc: 'LLMs, vision, agents and custom models.' },
-  },
-  {
-    tag: 'data',
-    es: { title: 'Data Engineering', desc: 'Pipelines, warehouses y analytics.' },
-    en: { title: 'Data Engineering', desc: 'Pipelines, warehouses and analytics.' },
-  },
-  {
-    tag: 'sw',
-    es: { title: 'Software', desc: 'Apps web, APIs, productos y MVPs.' },
-    en: { title: 'Software', desc: 'Web apps, APIs, products and MVPs.' },
+    tag: 'ai',
+    capabilities: [
+      'Machine Learning',
+      'Deep Learning',
+      'Computer Vision',
+      'NLP & LLMs',
+      'AI Agents',
+      'RAG Systems',
+      'MLOps',
+    ],
+    es: { title: 'Inteligencia Artificial', desc: 'Modelos que entienden, ven y razonan — del prototipo a producción.' },
+    en: { title: 'Artificial Intelligence', desc: 'Models that understand, see and reason — from prototype to production.' },
   },
   {
     tag: 'cloud',
-    es: { title: 'Cloud / DevOps', desc: 'Infra, MLOps y escalabilidad.' },
-    en: { title: 'Cloud / DevOps', desc: 'Infra, MLOps and scalability.' },
+    capabilities: [
+      'Cloud Native',
+      'Azure',
+      'Google Cloud',
+      'Kubernetes',
+      'Containers',
+      'Serverless',
+      'Infrastructure as Code',
+    ],
+    es: { title: 'Cloud Engineering', desc: 'Arquitecturas cloud-native escalables y reproducibles.' },
+    en: { title: 'Cloud Engineering', desc: 'Scalable, reproducible cloud-native architectures.' },
+  },
+  {
+    tag: 'data',
+    capabilities: [
+      'Data Lakes',
+      'Data Warehouses',
+      'Data Engineering',
+      'Real-Time Processing',
+      'Analytics',
+      'Data Governance',
+    ],
+    es: { title: 'Data Platforms', desc: 'De datos crudos a decisiones, en tiempo real.' },
+    en: { title: 'Data Platforms', desc: 'From raw data to decisions, in real time.' },
+  },
+  {
+    tag: 'platform',
+    capabilities: [
+      'Developer Platforms',
+      'CI/CD',
+      'Observability',
+      'Reliability Engineering',
+    ],
+    es: { title: 'Platform Engineering', desc: 'Plataformas internas que aceleran a tus equipos.' },
+    en: { title: 'Platform Engineering', desc: 'Internal platforms that accelerate your teams.' },
   },
 ];
 
@@ -84,8 +117,10 @@ export const cases: CaseItem[] = [
 export const stack: string[] = [
   'Python',
   'PyTorch',
-  'AWS',
+  'TypeScript',
+  'Azure',
+  'Google Cloud',
+  'Kubernetes',
+  'Terraform',
   'PostgreSQL',
-  'Docker',
-  'React',
 ];
