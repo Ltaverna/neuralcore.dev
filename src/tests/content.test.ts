@@ -26,13 +26,13 @@ describe('content data', () => {
     }
   });
 
-  it('has 3 cases, each bilingual with title + a metric', () => {
+  it('has 3 cases, each bilingual with title + metric', () => {
     expect(cases).toHaveLength(3);
     for (const c of cases) {
-      expect(c.metric).toBeTruthy();
       expect(c.gradient).toBeTruthy();
       for (const lang of LANGS) {
-        expect(c[lang].title).toBeTruthy();
+        expect(c[lang].title, `case ${lang}.title`).toBeTruthy();
+        expect(c[lang].metric, `case ${lang}.metric`).toBeTruthy();
       }
     }
   });

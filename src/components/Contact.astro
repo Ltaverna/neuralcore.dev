@@ -13,16 +13,16 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/REPLACE_ME';
     <form action={FORMSPREE_ENDPOINT} method="POST" class="mt-8 max-w-xl">
       <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <input
-          required name="name" type="text" placeholder={t('contact.name')}
+          required name="name" type="text" placeholder={t('contact.name')} aria-label={t('contact.name')}
           class="rounded-md border border-gray-700 bg-transparent p-3 text-sm text-white placeholder:text-gray-500 focus:border-accent focus:outline-none"
         />
         <input
-          required name="email" type="email" placeholder={t('contact.email')}
+          required name="email" type="email" placeholder={t('contact.email')} aria-label={t('contact.email')}
           class="rounded-md border border-gray-700 bg-transparent p-3 text-sm text-white placeholder:text-gray-500 focus:border-accent focus:outline-none"
         />
       </div>
       <textarea
-        required name="message" rows="4" placeholder={t('contact.message')}
+        required name="message" rows="4" placeholder={t('contact.message')} aria-label={t('contact.message')}
         class="mt-3 w-full rounded-md border border-gray-700 bg-transparent p-3 text-sm text-white placeholder:text-gray-500 focus:border-accent focus:outline-none"
       ></textarea>
       <button

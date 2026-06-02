@@ -11,10 +11,9 @@ export interface ProcessStep {
 }
 
 export interface CaseItem {
-  metric: string;
   gradient: string;
-  es: { title: string };
-  en: { title: string };
+  es: { title: string; metric: string };
+  en: { title: string; metric: string };
 }
 
 export const services: Service[] = [
@@ -66,22 +65,19 @@ export const processSteps: ProcessStep[] = [
 // NOTE: placeholder cases — real project copy + metrics to be supplied by the user.
 export const cases: CaseItem[] = [
   {
-    metric: '+18% yield',
     gradient: 'linear-gradient(135deg,#0a1a06,#1a2e0a)',
-    es: { title: 'Predicción agro' },
-    en: { title: 'Crop prediction' },
+    es: { title: 'Predicción agro', metric: '+18% rinde' },
+    en: { title: 'Crop prediction', metric: '+18% yield' },
   },
   {
-    metric: '-60% costo',
     gradient: 'linear-gradient(135deg,#06121a,#0a2433)',
-    es: { title: 'Pipeline de datos' },
-    en: { title: 'Data pipeline' },
+    es: { title: 'Pipeline de datos', metric: '-60% costo' },
+    en: { title: 'Data pipeline', metric: '-60% cost' },
   },
   {
-    metric: '0→prod 8sem',
     gradient: 'linear-gradient(135deg,#1a1206,#332406)',
-    es: { title: 'Plataforma SaaS' },
-    en: { title: 'SaaS platform' },
+    es: { title: 'Plataforma SaaS', metric: '0→prod 8 sem' },
+    en: { title: 'SaaS platform', metric: '0→prod 8 wks' },
   },
 ];
 
