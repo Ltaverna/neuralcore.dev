@@ -1,0 +1,18 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+import { services } from '../content/site';
+import ServiceCard from './ServiceCard.astro';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+<section id="services" class="border-t border-[var(--color-line)]">
+  <div class="mx-auto max-w-5xl px-5 py-20">
+    <p class="font-mono text-xs text-accent">{t('services.kicker')}</p>
+    <h2 class="mt-1 text-2xl font-bold text-white md:text-3xl">{t('services.title')}</h2>
+    <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {services.map((s, i) => <ServiceCard service={s} lang={lang} featured={i === 0} />)}
+    </div>
+  </div>
+</section>

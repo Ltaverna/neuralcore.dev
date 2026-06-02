@@ -1,0 +1,66 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+import LangSwitcher from './LangSwitcher.astro';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const links = [
+  { href: '#services', label: t('nav.services') },
+  { href: '#process', label: t('nav.process') },
+  { href: '#cases', label: t('nav.cases') },
+  { href: '#stack', label: t('nav.stack') },
+];
+---
+<header class="sticky top-0 z-50 border-b border-[var(--color-line-accent)] bg-[var(--color-bg)]/80 backdrop-blur">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between px-5 py-3 font-mono">
+    <a href="#top" class="text-sm font-bold text-white">◇ neuralcore<span class="text-accent">.dev</span></a>
+
+    <div class="hidden items-center gap-5 text-xs text-gray-400 md:flex">
+      {links.map((l) => <a href={l.href} class="hover:text-white">{l.label}</a>)}
+      <a href="#contact" class="rounded border border-accent px-3 py-1 text-accent hover:bg-accent hover:text-black">
+        {t('nav.contact')}
+      </a>
+      <LangSwitcher lang={lang} />
+    </div>
+
+    <div class="flex items-center gap-4 md:hidden">
+      <LangSwitcher lang={lang} />
+      <button
+        id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"
+        class="text-accent"
+      >
+        <span class="text-xl leading-none">≡</span>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" hidden class="border-t border-[var(--color-line)] px-5 py-3 font-mono text-sm text-gray-300 md:hidden">
+    {links.map((l) => <a href={l.href} class="block py-2 hover:text-accent" data-nav-link>{l.label}</a>)}
+    <a href="#contact" class="block py-2 text-accent" data-nav-link>{t('nav.contact')}</a>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const open = !menu.hasAttribute('hidden');
+      if (open) {
+        menu.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.removeAttribute('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+    menu.querySelectorAll('[data-nav-link]').forEach((link) =>
+      link.addEventListener('click', () => {
+        menu.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  }
+</script>

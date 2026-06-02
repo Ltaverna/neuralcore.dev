@@ -1,0 +1,28 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+<section id="top" class="bg-grid relative overflow-hidden">
+  <div
+    class="pointer-events-none absolute inset-0"
+    style="background:radial-gradient(circle at 20% 10%, rgba(163,230,53,.16), transparent 50%),radial-gradient(circle at 90% 100%, rgba(16,185,129,.16), transparent 45%)"
+  ></div>
+  <div class="relative mx-auto max-w-5xl px-5 py-24 md:py-32">
+    <p class="mb-4 font-mono text-sm text-accent">● {t('hero.prompt')}</p>
+    <h1 class="max-w-2xl text-4xl font-extrabold leading-tight text-white md:text-6xl">
+      {t('hero.titleA')}<span class="text-accent glow-accent">{t('hero.titleAccent')}</span>{t('hero.titleB')}
+    </h1>
+    <p class="mt-5 max-w-xl text-base text-gray-400 md:text-lg">{t('hero.subtitle')}</p>
+    <div class="mt-8 flex flex-wrap gap-3 font-mono text-sm">
+      <a href="#contact" class="shadow-glow rounded-md bg-accent px-5 py-3 font-bold text-black hover:bg-accent-soft">
+        {t('hero.ctaPrimary')} →
+      </a>
+      <a href="#cases" class="rounded-md border border-gray-700 px-5 py-3 text-gray-300 hover:border-accent hover:text-accent">
+        {t('hero.ctaSecondary')}
+      </a>
+    </div>
+  </div>
+</section>

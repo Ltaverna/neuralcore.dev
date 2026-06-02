@@ -1,0 +1,12 @@
+---
+import type { Lang } from '../i18n/ui';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const esActive = lang === 'es' ? 'text-accent' : 'text-gray-500';
+const enActive = lang === 'en' ? 'text-accent' : 'text-gray-500';
+---
+<div class="font-mono text-xs">
+  <a href="/" class={`hover:text-accent ${esActive}`}>ES</a>
+  <span class="text-gray-600">/</span>
+  <a href="/en/" class={`hover:text-accent ${enActive}`}>EN</a>
+</div>
