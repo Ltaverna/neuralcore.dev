@@ -98,11 +98,6 @@ export const processSteps: ProcessStep[] = [
 // NOTE: placeholder cases — real project copy + metrics to be supplied by the user.
 export const cases: CaseItem[] = [
   {
-    gradient: 'linear-gradient(135deg,#0a1a06,#1a2e0a)',
-    es: { title: 'Predicción agro', metric: '+18% rinde' },
-    en: { title: 'Crop prediction', metric: '+18% yield' },
-  },
-  {
     gradient: 'linear-gradient(135deg,#06121a,#0a2433)',
     es: { title: 'Pipeline de datos', metric: '-60% costo' },
     en: { title: 'Data pipeline', metric: '-60% cost' },
