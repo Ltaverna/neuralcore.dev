@@ -15,7 +15,10 @@ const links = [
 ---
 <header class="sticky top-0 z-50 border-b border-[var(--color-line-accent)] bg-[var(--color-bg)]/80 backdrop-blur">
   <nav class="mx-auto flex max-w-5xl items-center justify-between px-5 py-3 font-mono">
-    <a href="#top" class="text-sm font-bold text-white">◇ neuralcore<span class="text-accent">.dev</span></a>
+    <a href="#top" class="flex items-center gap-2 text-sm font-bold text-white">
+      <img src="/logo-icon.png" alt="NeuralCore" width="152" height="128" class="h-7 w-auto" />
+      <span>neuralcore<span class="text-accent">.dev</span></span>
+    </a>
 
     <div class="hidden items-center gap-5 text-xs text-gray-400 md:flex">
       {links.map((l) => <a href={l.href} class="hover:text-white">{l.label}</a>)}

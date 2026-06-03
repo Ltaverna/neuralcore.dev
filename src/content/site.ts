@@ -1,6 +1,5 @@
 export interface Service {
   tag: string;
-  capabilities: string[];
   es: { title: string; desc: string };
   en: { title: string; desc: string };
 }
@@ -20,70 +19,43 @@ export interface CaseItem {
 export const services: Service[] = [
   {
     tag: 'cloud',
-    capabilities: [
-      'Cloud Native',
-      'Azure',
-      'Google Cloud',
-      'Kubernetes',
-      'Containers',
-      'Serverless',
-      'Infrastructure as Code',
-    ],
     es: { title: 'Cloud Platforms', desc: 'Bases cloud-native seguras, escalables y reproducibles por defecto.' },
     en: { title: 'Cloud Platforms', desc: 'Cloud-native foundations that are secure, scalable and reproducible by default.' },
   },
   {
     tag: 'data',
-    capabilities: [
-      'Data Lakes',
-      'Data Warehouses',
-      'Lakehouse',
-      'Data Engineering',
-      'Real-Time Processing',
-      'Analytics',
-      'Data Governance',
-    ],
     es: { title: 'Data Platforms', desc: 'Lakehouses y pipelines que convierten datos crudos en productos gobernados y en tiempo real.' },
     en: { title: 'Data Platforms', desc: 'Lakehouses and pipelines that turn raw data into governed, real-time products.' },
   },
   {
     tag: 'platform',
-    capabilities: [
-      'Developer Platforms',
-      'CI/CD',
-      'Observability',
-      'Reliability Engineering',
-      'Golden Paths',
-    ],
     es: { title: 'Platform Engineering', desc: 'Plataformas internas con golden paths, CI/CD y observabilidad incorporada.' },
     en: { title: 'Platform Engineering', desc: 'Internal developer platforms with golden paths, CI/CD and built-in observability.' },
   },
   {
     tag: 'ai',
-    capabilities: [
-      'Machine Learning',
-      'Deep Learning',
-      'Computer Vision',
-      'NLP & LLMs',
-      'AI Agents',
-      'RAG Systems',
-    ],
     es: { title: 'Inteligencia Artificial', desc: 'IA en producción: de ML clásico a sistemas LLM, agentes y retrieval.' },
     en: { title: 'Artificial Intelligence', desc: 'Production AI — from classical ML to LLM systems, agents and retrieval.' },
   },
   {
     tag: 'mlops',
-    capabilities: [
-      'Model Training',
-      'Feature Stores',
-      'Model Serving',
-      'Monitoring',
-      'Model Registry',
-      'CI/CD for ML',
-    ],
     es: { title: 'MLOps', desc: 'El ciclo que mantiene tus modelos fiables en producción: entrenar, servir, monitorear, reentrenar.' },
     en: { title: 'MLOps', desc: 'The lifecycle that keeps models reliable in production: train, serve, monitor, retrain.' },
   },
+];
+
+// Broader expertise areas (enterprise framing) — shown above the condensed tech list.
+export const areasOfExpertise: string[] = [
+  'Cloud Architecture',
+  'Platform Engineering',
+  'Data Platforms',
+  'Artificial Intelligence',
+  'Machine Learning',
+  'MLOps',
+  'Enterprise Integration',
+  'DevOps & SRE',
+  'Distributed Systems',
+  'Cloud FinOps',
 ];
 
 export const processSteps: ProcessStep[] = [
@@ -124,15 +96,20 @@ export const cases: CaseItem[] = [
 ];
 
 export const stack: string[] = [
-  'Python',
-  'TypeScript',
-  'PyTorch',
-  'Databricks',
-  'Spark',
-  'Airflow',
   'Azure',
   'Google Cloud',
   'Kubernetes',
+  'Spark',
+  'Databricks',
+  'BigQuery',
+  'Vertex AI',
+  'Azure AI',
+  'TensorFlow',
+  'PyTorch',
+  'Apache NiFi',
+  'Airflow',
   'Terraform',
-  'PostgreSQL',
+  'Docker',
+  'Python',
+  'Scala',
 ];
