@@ -9,7 +9,7 @@ const t = useTranslations(lang);
 <section id="process" class="border-t border-[var(--color-line)]">
   <div class="mx-auto max-w-5xl px-5 py-20">
     <p class="font-mono text-xs text-accent">{t('process.kicker')}</p>
-    <h2 class="mt-1 text-2xl font-bold text-white md:text-3xl">{t('process.title')}</h2>
+    <h2 class="mt-1 text-2xl font-bold tracking-tight text-white md:text-3xl">{t('process.title')}</h2>
     <div class="mt-8 grid grid-cols-1 gap-3 font-mono text-sm sm:grid-cols-2 lg:grid-cols-4">
       {processSteps.map((p, i) => (
         <div class={`border-l-2 ${i === 0 ? 'border-accent' : 'border-gray-700'} px-4 py-2`}>
